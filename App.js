@@ -1,10 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
+<<<<<<< HEAD
 import { StyleSheet, Text, View, Image, TextInput, Pressable } from 'react-native';
 import carritoImage from './assets/carrito-de-compras.png'
+=======
+import { StyleSheet, Text, View } from 'react-native';
+>>>>>>> 22d3d4bc4d13ee59de3f580b8a3f42ac6d41c190
 
 export default function App() {
   return (
     <View style={styles.container}>
+<<<<<<< HEAD
       <View style={{
         flexDirection: 'row', 
         justifyContent: 'center', 
@@ -36,12 +41,17 @@ export default function App() {
           <Text style= {styles.product}>Vestidos</Text>
           <Text style= {styles.product} >Remerones</Text>
         </View>
+=======
+      <Text>Hola, Coder!</Text>
+      <StatusBar style="auto" />
+>>>>>>> 22d3d4bc4d13ee59de3f580b8a3f42ac6d41c190
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
+<<<<<<< HEAD
     backgroundColor: '#ededed', 
     flex: 1,
     paddingHorizontal: 14,
@@ -57,3 +67,11 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
   }
 })
+=======
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
+>>>>>>> 22d3d4bc4d13ee59de3f580b8a3f42ac6d41c190
