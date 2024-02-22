@@ -1,146 +1,122 @@
 [
   {
-    "id": 123,
-    "nombre": "Maxi Buzo Sirenita",
-    "categoria": "Maxi buzos adultos",
-    "stock": 4,
-    "precio": 7500,
-    "edad": "adultos",
-    "rutaImagen": "./images/maxibuzosirenita.jpeg"
-  },
-  {
     "id": 133,
-    "nombre": "Maxi Buzo Gato",
-    "categoria": "Maxi buzos adultos",
+    "title": "Maxi Buzo Gato",
+    "category": "Maxi buzos adultos",
     "stock": 2,
-    "precio": 7500,
-    "edad": "adultos",
-    "rutaImagen": "./images/maxibuzogato.jpeg"
+    "price": 7500,
+    "images": "https://acdn.mitiendanube.com/stores/313/800/products/img_26841-3c0e8c5bb8e253c64316873096331106-480-0.webp"
   },
   {
     "id": 143,
-    "nombre": "Maxi Buzo Bob",
-    "categoria": "Maxi buzos adultos",
+    "title": "Maxi Buzo Once",
+    "category": "Maxi buzos adultos",
     "stock": 1,
-    "precio": 7500,
-    "edad": "adultos",
-    "rutaImagen": "./images/maxibuzobob.jpeg"
+    "price": 7500,
+    "images": "https://acdn.mitiendanube.com/stores/313/800/products/whatsapp-image-2023-02-22-at-10-03-18-11-8b33be68d8f151c09416770717454491-480-0.webp"
   },
   {
     "id": 213,
-    "nombre": "Maxi Buzo Stitch kids",
-    "categoria": "Maxi buzos kids",
+    "title": "Maxi Buzo Sirenita kids",
+    "category": "Maxi buzos kids",
     "stock": 3,
-    "precio": 7100,
-    "edad": "kids",
-    "rutaImagen": "./images/maxibuzostitchkids.jpg"
+    "price": 7100,
+    "images": "https://acdn.mitiendanube.com/stores/313/800/products/img_228916212239449811-4e659eca575e89be3d16213777430162-480-0.webp"
   },
   {
     "id": 223,
-    "nombre": "Maxi Buzo Angel kids",
-    "categoria": "Maxi buzos kids",
+    "title": "Maxi Buzo Paw Patrol kids",
+    "category": "Maxi buzos kids",
     "stock": 5,
-    "precio": 7100,
-    "edad": "kids",
-    "rutaImagen": "./images/maxibuzoangelkids.jpg"
+    "price": 7100,
+    "images": "https://acdn.mitiendanube.com/stores/313/800/products/img_24591-3573008b91f26d469816873090954361-480-0.webp"
   },
   {
     "id": 233,
-    "nombre": "Maxi buzo Hombre Araña kids",
-    "categoria": "Maxi buzos kids",
+    "title": "Maxi buzo Hombre Araña kids",
+    "category": "Maxi buzos kids",
     "stock": 2,
-    "precio": 7100,
-    "edad": "kids",
-    "rutaImagen": "./images/maxibuzohombrearaniakids.jpg"
+    "price": 7100,
+    "images": "https://acdn.mitiendanube.com/stores/313/800/products/img_25051-b44b7207d8e5b4b97e16873092937727-480-0.webp"
   },
   {
     "id": 313,
-    "nombre": "Remerón Mickey adulto",
-    "categoria": "Remerones adultos",
+    "title": "Remerón Mickey adulto",
+    "category": "Remerones adultos",
     "stock": 1,
-    "precio": 5500,
-    "edad": "adultos",
-    "rutaImagen": "./images/remeronmickeyadulto.jpeg"
+    "price": 5500,
+    "images": "https://acdn.mitiendanube.com/stores/313/800/products/img_1298-8287f97f271b7bdec616989489358178-480-0.webp"
   },
   {
     "id": 323,
-    "nombre": "Remerón Silvestre adulto",
-    "categoria": "Remerones adultos",
+    "title": "Remerón Silvestre adulto",
+    "category": "Remerones adultos",
     "stock": 7,
-    "precio": 5500,
-    "edad": "adultos",
-    "rutaImagen": "./images/remeronsilvestreadulto.jpeg"
+    "price": 5500,
+    "images": "https://acdn.mitiendanube.com/stores/313/800/products/img_1683-90247c39a33c66b05c16989499292099-480-0.webp"
   },
   {
     "id": 333,
-    "nombre": "Remerón Kitty adulto",
-    "categoria": "Remerones adultos",
+    "title": "Remerón Kitty adulto",
+    "category": "Remerones adultos",
     "stock": 5,
-    "precio": 5500,
-    "edad": "adultos",
-    "rutaImagen": "./images/remeronkittyadulto.jpeg"
+    "price": 5500,
+    "images": "https://acdn.mitiendanube.com/stores/313/800/products/dsc_62171-eed9d785598f21e34916299449343179-480-0.webp"
   },
   {
     "id": 413,
-    "nombre": "Remerón Sirenita kids",
-    "categoria": "Remerones kids",
+    "title": "Remerón Sirenita kids",
+    "category": "Remerones kids",
     "stock": 3,
-    "precio": 4900,
-    "edad": "kids",
-    "rutaImagen": "./images/remeronsirenitakids.jpg"
+    "price": 4900,
+    "images": "https://acdn.mitiendanube.com/stores/313/800/products/carebears-foto-08211-b1140709494429ad8316663946989313-480-0.webp"
   },
   {
     "id": 423,
-    "nombre": "Remerón Alicia Tattoo kids",
-    "categoria": "Remerones kids",
+    "title": "Remerón Alicia Tattoo kids",
+    "category": "Remerones kids",
     "stock": 9,
-    "precio": 4900,
-    "edad": "kids",
-    "rutaImagen": "./images/remeronaliciatattookids.jpg"
+    "price": 4900,
+    "images": "https://acdn.mitiendanube.com/stores/313/800/products/carebears-foto-10781-24294e42150490d45f16663945420930-480-0.webp"
   },
   {
     "id": 433,
-    "nombre": "Remeron Bugs Bunny kids",
-    "categoria": "Remerones kids",
+    "title": "Remeron Bugs Bunny kids",
+    "category": "Remerones kids",
     "stock": 2,
-    "precio": 4900,
-    "edad": "kids",
-    "rutaImagen": "./images/remeronbugsbunnykids.jpg"
+    "price": 4900,
+    "images": "https://acdn.mitiendanube.com/stores/313/800/products/carebears-foto-095611-9cb5aa5702f8c08f8816663964376435-480-0.webp"
   },
   {
     "id": 513,
-    "nombre": "Vestido Stitch+Angel",
-    "categoria": "Vestidos adultos",
+    "title": "Vestido Stitch+Angel",
+    "category": "Vestidos adultos",
     "stock": 6,
-    "precio": 5400,
-    "edad": "adultos",
-    "rutaImagen": "./images/vestidostitch+angel.jpeg"
+    "price": 5400,
+    "images": "https://acdn.mitiendanube.com/stores/313/800/products/whatsapp-image-2021-08-25-at-08-13-281-b3a4619b13e7ae129816299460243619-480-0.webp"
   },
   {
     "id": 523,
-    "nombre": "Vestido Cruella",
-    "categoria": "Vestidos adultos",
+    "title": "Vestido Cruella",
+    "category": "Vestidos adultos",
     "stock": 5,
-    "precio": 5400,
-    "edad": "adultos",
-    "rutaImagen": "./images/vestidocruella.jpeg"
+    "price": 5400,
+    "images": "https://acdn.mitiendanube.com/stores/313/800/products/img_49561-389a884271f589800916444414758688-480-0.webp"
   },
   {
     "id": 533,
-    "nombre": "Vestido Pato Lucas",
-    "categoria": "Vestidos adultos",
+    "title": "Vestido Pato Lucas",
+    "category": "Vestidos adultos",
     "stock": 4,
-    "precio": 5400,
-    "edad": "adultos",
-    "rutaImagen": "./images/vestidopatolucas.jpg"
+    "price": 5400,
+    "images": "https://acdn.mitiendanube.com/stores/313/800/products/carebears-foto-08281-adc27940ddb8e3b87116668803022311-480-0.webp"
   },
   {
     "id": 613,
-    "nombre": "Vestido Bob kids",
-    "categoria": "Vestidos kids",
+    "title": "Vestido Bob kids",
+    "category": "Vestidos kids",
     "stock": 2,
-    "precio": 4800,
-    "edad": "kids",
-    "rutaImagen": "./images/vestidobobkids.jpg"
+    "price": 4800,
+    "images": "https://acdn.mitiendanube.com/stores/313/800/products/carebears-foto-06191-d05281cd638fbe26bd16668804883187-480-0.webp"
   }
 ] 
