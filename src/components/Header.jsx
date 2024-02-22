@@ -12,11 +12,13 @@ function Header({ title }) {
 export default Header;
 
 const styles = StyleSheet.create({
-  container:{
-      backgroundColor: colors.gris_fondo,
-      width: "100%",
-      paddingVertical: 8
-    },
+  container: {
+    height: 40,
+    width: "100%",
+    backgroundColor: colors.gris_fondo,
+    justifyContent: "center",
+    alignItems: "center",
+  },
     text:{
       fontSize: 30,
       color: colors.naranja_100,

@@ -20,7 +20,7 @@ const ProductItem = ({product, navigation}) => {
 
   return (
     <>
-      <Pressable onPress={() => navigation.navigate("ItemDetail", {id: product.id})}>
+      <Pressable style={styles.card} onPress={() => navigation.navigate("ItemDetail", {id: product.id})}>
         <Card
           style={{
             marginVertical: 20,
@@ -39,6 +39,17 @@ const ProductItem = ({product, navigation}) => {
 export default ProductItem;
 
 const styles = StyleSheet.create({
+    card: {
+      height: 100,
+      padding: 20,
+      margin: 15,
+      borderWidth: 2,
+      borderRadius: 10,
+      flexDirection: "row",
+      justifyContent: "space-between",
+      alignItems: "center",
+      gap: 4
+    },
     text:{
         fontSize: 20,
         textAlign: 'center',
