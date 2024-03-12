@@ -1,0 +1,1 @@
+export const base_url = "https://desarrollo-de-apps-fulanos-default-rtdb.firebaseio.com/"
