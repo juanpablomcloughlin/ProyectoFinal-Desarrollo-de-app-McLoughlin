@@ -14,7 +14,7 @@ Bienvenid@s a mi proyecto. En esta ocasión se realizó un e-commerce de la empr
 * SQLite
 
 ## Instalación
-1 - Clona el repositorio: git clone https://github.com/juanpablomcloughlin/Desarrollo-de-app-CoderHouse.git
+1 - Clona el repositorio: git clone https://github.com/juanpablomcloughlin/ProyectoFinal-Desarrollo-de-app-McLoughlin.git
 
 2 - Ingresa al directorio: cd tu-repositorio
 
