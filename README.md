@@ -23,7 +23,7 @@ Bienvenid@s a mi proyecto. En esta ocasión se realizó un e-commerce de la empr
 ## Funcionalidades Principales
 
 * **Inicio de sesión y registro de usuarios:** Los usuarios pueden registrarse en la aplicación o iniciar sesión si ya tienen una cuenta existente. En caso de no tenerla pueden crear una.
-![alt text](https://github.com/juanpablomcloughlin/ProyectoFinal-Desarrollo-de-app-McLoughlin/assets/Inicio-sesion.png?raw=true)
+https://raw.githubusercontent.com/juanpablomcloughlin/ProyectoFinal-Desarrollo-de-app-McLoughlin/main/assets/Inicio-sesion.png
 
 
 * **Los usuarios pueden navegar por categorías:** Explorando los productos disponibles organizados por categorías, facilitando la búsqueda de productos específicos.
