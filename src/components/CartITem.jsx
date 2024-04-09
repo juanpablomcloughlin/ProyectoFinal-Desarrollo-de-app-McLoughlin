@@ -1,16 +1,20 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import React from 'react';
+import { StyleSheet } from 'react-native';
+import StyledView from '../styledComponents/StyledView';
+import StyledText from '../styledComponents/StyledText';
 
-const CartITem = ({item}) => {
+const CartItem = ({ title, price, quantity }) => {
   return (
-    <View>
-      <Text>{item.title}</Text>
-      <Text>{item.brand}</Text>
-      <Text>{item.price}</Text>
-    </View>
-  )
-}
+    <StyledView cardContainer>
+      <StyledText>{title}</StyledText>
+      <StyledText>Price: ${price}</StyledText>
+      <StyledText>Quantity: {quantity}</StyledText>
+    </StyledView>
+  );
+};
 
-export default CartITem
 
-const styles = StyleSheet.create({})
+export default CartItem;
+
+const styles = StyleSheet.create({ 
+});

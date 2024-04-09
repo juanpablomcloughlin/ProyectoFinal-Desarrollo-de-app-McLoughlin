@@ -1,20 +1,20 @@
-import { StyleSheet, Text, View } from "react-native";
-import React from "react";
+import React from 'react';
+import { StyleSheet } from 'react-native';
+import StyledText from '../styledComponents/StyledText';
+import StyledView from '../styledComponents/StyledView';
 
-const OrderItem = ({ item }) => {
-  const total = item.items.reduce(
-    (acc, currentItem) => (acc += currentItem.quantity * currentItem.price),
-    0
-  );
+const OrderItem = ({ order }) => {
+  const { id, total } = order; 
 
   return (
-    <View>
-      <Text>{new Date(item.createdAt).toLocaleString()}</Text>
-      <Text>{total}</Text>
-    </View>
+    <StyledView cardContainer>
+      <StyledText general>Order code: {id}</StyledText>
+      <StyledText general>Total: ${total}</StyledText>
+    </StyledView>
   );
 };
 
-export default OrderItem;
+const styles = StyleSheet.create({
+});
 
-const styles = StyleSheet.create({});
+export default OrderItem;

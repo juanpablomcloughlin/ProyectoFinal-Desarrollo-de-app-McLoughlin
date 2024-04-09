@@ -1,6 +1,8 @@
-import { Image, Pressable, StyleSheet, Text, useWindowDimensions } from "react-native";
+import { Image, Pressable, StyleSheet, useWindowDimensions } from "react-native";
 import Card from "./Card";
 import { useEffect, useState } from "react";
+import {colors} from "../global/colors";
+import StyledText from "../styledComponents/StyledText";
 
 const ProductItem = ({product, navigation}) => {
   const [isPortrait, setIsPortrait] = useState(true)
@@ -20,15 +22,16 @@ const ProductItem = ({product, navigation}) => {
 
   return (
     <>
-      <Pressable style={styles.card} onPress={() => navigation.navigate("ItemDetail", {id: product.id})}>
+      <Pressable style={styles.cardContainer} onPress={() => navigation.navigate("ItemDetail", {id: product.id})}>
         <Card
           style={{
             marginVertical: 20,
             flexDirection: "row",
-            justifyContent: "space-between",
+            alignItems: "center",
+            gap: 10
           }}
         >
-          <Text style={width < 400 ? styles.textMin : styles.text}>{product.title}</Text>
+          <StyledText productCard width="60%">{product.title}</StyledText>
           <Image style={styles.image} source={{uri: product.images}} />
         </Card>
       </Pressable>
@@ -39,28 +42,24 @@ const ProductItem = ({product, navigation}) => {
 export default ProductItem;
 
 const styles = StyleSheet.create({
-    card: {
-      height: 100,
+   cardContainer: {
+      marginHorizontal: 30,
+      marginTop: 20,
+      marginVertical: 10,
       padding: 20,
-      margin: 15,
-      borderWidth: 2,
-      borderRadius: 10,
-      flexDirection: "row",
-      justifyContent: "space-between",
+      justifyContent: "center",
       alignItems: "center",
-      gap: 4
+      backgroundColor: colors.naranja_100,
+      borderRadius: 20,
     },
     text:{
-        fontSize: 20,
+        fontSize: 25,
         textAlign: 'center',
-        width: '70%'
-    },
-    textMin:{
-      fontSize: 14,
-      width: "70%"
+        width: '60%'
     },
     image:{
-        width: 70,
-        height: 70
+        width: 100,
+        height: 100,
+        borderRadius: 20,
     }
 })

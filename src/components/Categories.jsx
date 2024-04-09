@@ -1,11 +1,25 @@
-import { FlatList, StyleSheet, Text, View } from "react-native";
+import { FlatList, StyleSheet, View, Text } from "react-native";
 import CategoryItem from "./CategoryItem";
-import { useSelector } from "react-redux";
 import { useGetCategoriesQuery } from "../services/shopService";
 
 function Categories({ navigation }) {
-
   const { data, isLoading, error } = useGetCategoriesQuery();
+
+  if (isLoading) {
+    return (
+      <View style={styles.loadingContainer}>
+        <Text>Cargando categorías...</Text>
+      </View>
+    );
+  }
+
+  if (error) {
+    return (
+      <View style={styles.errorContainer}>
+        <Text>Error al cargar las categorías</Text>
+      </View>
+    );
+  }
 
   return (
     <View style={styles.container}>
@@ -20,11 +34,21 @@ function Categories({ navigation }) {
   );
 }
 
-export default Categories;
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: "100%",
   },
+  loadingContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  errorContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
 });
+
+export default Categories;

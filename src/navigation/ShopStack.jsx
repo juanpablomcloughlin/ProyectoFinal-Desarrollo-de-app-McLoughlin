@@ -4,8 +4,8 @@ import ItemDetail from "../screens/ItemDetail";
 import ItemListCategories from "../screens/ItemListCategories";
 import Header from "../components/Header";
 
+const Stack = createNativeStackNavigator();
 const Navigator = () => {
-  const Stack = createNativeStackNavigator();
 
   return (
       <Stack.Navigator

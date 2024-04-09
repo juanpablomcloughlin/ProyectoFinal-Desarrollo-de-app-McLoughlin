@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, Text, View } from "react-native";
+import { Pressable, StyleSheet, View, Image } from "react-native";
 import React, { useEffect, useState } from "react";
 import InputForm from "../components/InputForm";
 import { useSignUpMutation } from "../services/authService";
@@ -6,6 +6,7 @@ import SubmitButton from "../components/SubmitButton";
 import { useDispatch } from "react-redux";
 import { setUser } from "../features/auth/authSlice";
 import { signupSchema } from "../validations/signupSchema";
+import StyledText from "../styledComponents/StyledText";
 
 const Signup = ({navigation}) => {
   const [email, setEmail] = useState("");
@@ -19,10 +20,7 @@ const Signup = ({navigation}) => {
   const dispatch = useDispatch();
 
   const onSubmit = () => {
-    console.log("mail", errorMail);
-    console.log("password", errorPassword);
-    console.log("confirmPassword", errorConfirmPassword);
-
+    
     try {
       setErrorMail("");
       setErrorPassword("");
@@ -30,9 +28,7 @@ const Signup = ({navigation}) => {
 
       signupSchema.validateSync({ password, confirmPassword, email });
       triggerSignup({ email, password });
-      console.log("Registro exitoso");
     } catch (err) {
-      console.log("path", err.path);
       switch (err.path) {
         case "email":
           setErrorMail(err.message);
@@ -56,8 +52,8 @@ const Signup = ({navigation}) => {
   }, [result]);
 
   return (
-    <View>
-      <Text>Register</Text>
+    <View style={styles.container}>
+      <Image style={styles.image} borderRadius={20} source={require("../../assets/logo-fulanos.png")} />
       <InputForm label={"Email"} error={errorMail} onChange={setEmail} />
       <InputForm
         label={"Password"}
@@ -71,14 +67,25 @@ const Signup = ({navigation}) => {
         onChange={setConfirmPassword}
         isSecure={true}
       />
-      <Pressable onPress={() => navigation.navigate("Login")}>
-        <Text>Ir al login</Text>
-      </Pressable>
       <SubmitButton title={"Register"} onPress={onSubmit} />
+      <Pressable onPress={() => navigation.navigate("Login")}>
+        <StyledText>Ya tenés cuenta? Ir al login</StyledText>
+      </Pressable>
     </View>
   );
 };
 
 export default Signup;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  container: {
+    alignItems: "center",
+    gap: 20,
+    marginTop: 50,
+  },
+  image: {
+    width: 100, 
+    height: 100, 
+    resizeMode: "contain", 
+  },
+});

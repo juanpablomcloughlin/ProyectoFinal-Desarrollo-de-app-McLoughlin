@@ -46,9 +46,6 @@ export const cartSlice = createSlice({
         };
       }
     },
-    removeItem: (state, action) => {
-      //Logica para remover el producto
-    },
   },
 });
 

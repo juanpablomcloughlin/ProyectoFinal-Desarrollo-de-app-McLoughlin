@@ -1,44 +1,78 @@
-import { useEffect, useState } from 'react'
-import { FlatList, Pressable, StyleSheet, Text, View } from 'react-native'
-import CartITem from '../components/CartITem';
-import allCartItems from "../data/cart.json";
-import { usePostOrderMutation } from '../services/shopService';
-import { useSelector } from 'react-redux';
+import React from 'react';
+import { View, FlatList, StyleSheet, Pressable, ToastAndroid } from 'react-native';
+import { useSelector, useDispatch } from 'react-redux';
+import CartItem from '../components/CartItem';
+import { clearCart } from '../features/shop/cartSlice';
+import { colors } from '../global/colors';
+import { usePostOrderMutation } from "../services/shopService";
+import StyledText from '../styledComponents/StyledText';
 
 const Cart = () => {
+  const cartState = useSelector(state => state.cartReducer);
+  const cartItems = cartState.items;
+  const total = cartState.total;
+  const [triggerPost] = usePostOrderMutation()
+  const dispatch = useDispatch();
 
-    const cartItems  = useSelector((state) => state.cartReducer.value.items);
-    const total = useSelector((state) => state.cartReducer.value.total);
-    const [triggerPost, result] = usePostOrderMutation()
-    const confirmCart = ()=>{
-      triggerPost({total, cartItems, user: "loggedUser"})
-    }
+  const handleClearCart = () => {
+    dispatch(clearCart());
+  };
+
+  const handleConfirmCart = () => {
+    triggerPost({ total, cartItems, user: "loggedUser"})
+    ToastAndroid.show('Orden confirmada con éxito', ToastAndroid.SHORT);
+    dispatch(clearCart());
+    };
 
 
     return (
-      <View>
+      <View style={styles.container}>
         {cartItems.length > 0 ? (
           <>
             <FlatList
               data={cartItems}
-              renderItem={({ item }) => <CartITem item={item} />}
-              keyExtractor={(cartItem) => cartItem.id}
+              renderItem={({ item }) => (
+                <CartItem
+                  title={item.title} 
+                  price={item.price}
+                  quantity={item.quantity}
+                />
+              )}
+              keyExtractor={item => item.title.toString()}
             />
-            <Text>Total: ${total}</Text>
-            <Pressable onPress={confirmCart}>
-              <Text>
-                Confirm
-              </Text>
-            </Pressable>
+            <StyledText categoryCard>Total: ${total}</StyledText>
+            <View style={styles.buttonContainer}>
+              <Pressable style={styles.button} onPress={handleClearCart}>
+                <StyledText title productCard>Delete cart</StyledText>
+              </Pressable>
+              <Pressable style={styles.button} onPress={handleConfirmCart}>
+                <StyledText title productCard>Confirm order</StyledText>
+              </Pressable>
+            </View>
           </>
         ) : (
-          <Text>No hay productos agregados</Text>
+          <StyledText productCard>There are no products in the cart</StyledText>
         )}
       </View>
     );
   };
-  
 
-export default Cart
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    padding: 10,
+  },
+  button: {
+    backgroundColor: colors.naranja_100,
+    padding: 10,
+    borderRadius: 5,
+  },
+  buttonContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginTop: 20,
+    width: '100%',
+  },
+});
 
-const styles = StyleSheet.create({})
+export default Cart;

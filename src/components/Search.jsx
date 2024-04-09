@@ -1,19 +1,23 @@
 import { useState } from "react";
-import { Pressable, StyleSheet, Text, TextInput, View } from "react-native";
-import { AntDesign } from "@expo/vector-icons";
-import { Entypo } from "@expo/vector-icons";
+import { Pressable, StyleSheet, TextInput, View, Text } from "react-native";
+import { AntDesign, Entypo } from "@expo/vector-icons";
 
 const Search = ({ onSearch }) => {
   const [input, setInput] = useState("");
+  const [error, setError] = useState("");
 
   const handleSearch = () => {
-    if (input) {
-      onSearch(input);
+    if (!input.trim()) {
+      setError("Ingrese un término de búsqueda");
+    } else {
+      setError("");
+      onSearch(input.trim().toLowerCase());  
     }
   };
 
   const removeInput = () => {
     setInput("");
+    setError("")
   };
 
   return (
@@ -32,30 +36,35 @@ const Search = ({ onSearch }) => {
           <Entypo name="circle-with-cross" size={25} color="black" />
         </Pressable>
       </View>
+      {error ? <Text style={styles.errorText}>{error}</Text> :null}
     </View>
   );
 };
 
 export default Search;
 
+
 const styles = StyleSheet.create({
   container: {
-    flexDirection: "column",
     justifyContent: "center",
-    alignItems: "flex-start",
+    alignItems: "center",
   },
   inputContainer: {
     flexDirection: "row",
-    justifyContent: "space-between",
     alignItems: "center",
     width: "90%",
-    paddingTop: 10,
+    marginTop: 10,
+    paddingHorizontal: 5,
+    borderWidth: 1,
+    borderRadius: 8,
   },
   input: {
-    borderRadius: 8,
+    flex: 1,
+    paddingVertical: 10,
+    paddingHorizontal: 10,
+    fontSize: 18,
+  },
+  iconButton: {
     padding: 10,
-    borderWidth: 1,
-    width: "80%",
-    fontSize: 20,
   },
 });

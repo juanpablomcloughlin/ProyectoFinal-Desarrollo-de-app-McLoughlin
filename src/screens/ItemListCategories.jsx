@@ -10,19 +10,18 @@ function ItemListCategories({ navigation }) {
   const [keyword, setKeyword] = useState("");
 
   const category = useSelector((state)=> state.shopReducer.value.categorySelected);
-  const { data: productsFilteredByCategory, isLoading, error} = useGetProductsByCategoryQuery(category)
+  const { data: productsFilteredByCategory} = useGetProductsByCategoryQuery(category)
 
   useEffect(() => {
-    console.log(productsFilteredByCategory);
     if (productsFilteredByCategory) {
         const productsRaw = Object.values(productsFilteredByCategory)
         const productsFiltered = productsRaw.filter((product) =>
-            product.title.includes(keyword)
+          product.title.toLowerCase().includes(keyword.toLowerCase())
         );
         setProducts(productsFiltered);
     }
 }, [productsFilteredByCategory, keyword]);
-
+  
   return (
     <View style={styles.container}>
       <Search onSearch={setKeyword} />

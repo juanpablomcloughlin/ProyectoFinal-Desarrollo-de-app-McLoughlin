@@ -3,8 +3,8 @@ import shopReducer from "../features/shop/shopSlice";
 import cartReducer from "../features/shop/cartSlice";
 import authReducer from "../features/auth/authSlice";
 import { shopApi } from "../services/shopService";
-import { setupListeners } from "@reduxjs/toolkit/query";
 import { authApi } from "../services/authService";
+import { setupListeners } from "@reduxjs/toolkit/query";
 
 export default configureStore({
   reducer: {

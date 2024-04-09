@@ -1,39 +1,40 @@
-import { Image, StyleSheet, Text, View, Pressable } from 'react-native'
+import { Image, StyleSheet, Text, View, Pressable, ToastAndroid } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import allProducts from '../data/products.json'
 import { colors } from '../global/colors';
 import { useDispatch } from 'react-redux';
 import { addItem } from "../features/shop/cartSlice";
+import StyledText from '../styledComponents/StyledText';
 
 const ItemDetail = ({navigation, route}) => {
   const [product, setProduct] = useState(null);
-
-  const {id} = route.params
-
-  const dispatch = useDispatch()
+  const { id } = route.params;
+  const dispatch = useDispatch();
 
   const onAddCart = () => {
-    dispatch(addItem({...product, quantity: 1}))
-  }
+    if (product) {
+      dispatch(addItem({ ...product, quantity: 1 }));
+      ToastAndroid.show(`${product.title} agregado al carrito`, ToastAndroid.SHORT);
+    }
+  };
 
   useEffect(() => {
     const productFinded = allProducts.find((product) => product.id === id);
-    setProduct(productFinded)
+    setProduct(productFinded);
   }, [id]);
 
   return (
-      <View style={styles.main}>
+    <View style={styles.main}>
       {product ? (
         <View style={styles.container}>
           <Image
-            source={{ uri: product.images}}
+            source={{ uri: product.images }}
             style={styles.image}
             resizeMode="cover"
           />
           <View style={styles.textContainer}>
-            <Text style={styles.descriptionText}>{product.title}</Text>
-            <Text style={styles.descriptionText}>{product.description}</Text>
-            <Text style={styles.descriptionTextPrice}>${product.price}</Text>
+            <StyledText general title productCard>{product.title}</StyledText>
+            <StyledText general title productCard>${product.price}</StyledText>
             <Pressable style={styles.buy} onPress={onAddCart}>
               <Text style={styles.buyText}>Add to cart</Text>
             </Pressable>
@@ -41,14 +42,14 @@ const ItemDetail = ({navigation, route}) => {
         </View>
       ) : (
         <View>
-          <Text>Cargando...</Text>
+          <StyledText general>Cargando...</StyledText>
         </View>
       )}
     </View>
-    );
-    };
+  );
+};
 
-export default ItemDetail
+export default ItemDetail;
 
 const styles = StyleSheet.create({
   main: {
@@ -63,9 +64,11 @@ const styles = StyleSheet.create({
     height: "100%",
   },
   image: {
-    width: "100%",
+    width: "90%",
     height: 400,
     marginVertical: 15,
+    borderRadius: 15,
+    padding: 10
   },
   textContainer: {
     flexDirection: "column",
@@ -73,26 +76,15 @@ const styles = StyleSheet.create({
     alignItems: "center",
     padding: 6,
   },
-  descriptionText: {
-    fontFamily: "AbeezeeRegular",
-    fontSize: 16,
-    color: "black",
-    paddingVertical: 4,
-  },
-  descriptionTextPrice: {
-    fontFamily: "AbeezeeRegular",
-    fontSize: 25,
-    color: "black",
-    paddingVertical: 6,
-  },
   buy: {
     padding: 10,
+    marginTop: 20,
     borderRadius: 6,
-    backgroundColor: colors.gris_fondo,
+    backgroundColor: colors.naranja_100,
   },
   buyText: {
     fontFamily: "AbeezeeRegular",
-    fontSize: 22,
-    color: "white",
+    fontSize: 18,
+    color: colors.gris_fondo,
   },
-})
+});
